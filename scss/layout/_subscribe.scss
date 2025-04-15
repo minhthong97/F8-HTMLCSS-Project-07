@@ -1,0 +1,78 @@
+/*========== Subscribe ==========*/
+
+@use "../abstracts";
+
+.subscribe {
+    margin-top: 80px;
+
+    &__inner {
+        position: relative;
+
+        padding: 100px 0;
+        border-radius: 12px;
+
+        background: abstracts.$heading-color;
+    }
+
+    &__heading {
+        color: #fff;
+    }
+
+    &__desc {
+        color: #aba6b5;
+    }
+
+    mark::after {
+        width: 102%;
+        height: 50%;
+    }
+
+    &__form {
+        margin-top: 70px;
+    }
+
+    &__body {
+        align-items: center;
+    }
+
+    &__input {
+        width: 100%;
+        height: 64px;
+        padding: 18px 28px;
+        border-radius: 8px;
+
+        background: #2b213f;
+        color: #aba6b5;
+
+        &::placeholder {
+            line-height: 1.75;
+
+            color: #aba6b5;
+        }
+    }
+
+    &__decor {
+        position: absolute;
+
+        &:nth-child(1) {
+            bottom: 10.3%;
+            left: 3%;
+
+            color: abstracts.$primary-color;
+        }
+
+        &:nth-child(2) {
+            top: 6%;
+            left: 45.1%;
+
+            color: #5bc18f;
+        }
+
+        &:nth-child(3) {
+            top: 41.1%;
+            right: 3.2%;
+
+            color: abstracts.$secondary-color;
+        }
+    }
+}

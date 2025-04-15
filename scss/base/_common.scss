@@ -1,0 +1,191 @@
+/*========== Common ==========*/
+@use "../abstracts";
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: abstracts.$primary-font;
+    overflow-x: hidden;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    scroll-padding: 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+a,
+input,
+textarea,
+select,
+button {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+mark {
+    position: relative;
+    z-index: 1;
+
+    background-color: inherit;
+    color: inherit;
+
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: -5%;
+        left: 50%;
+        z-index: -1;
+
+        width: 82%;
+        height: 48%;
+
+        background-image: url(../../assets/img/curve.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+
+        transform: translateX(-50%);
+    }
+}
+
+%heading-share {
+    color: abstracts.$heading-color;
+    font-weight: 700;
+}
+
+.heading {
+    &--lv1 {
+        @extend %heading-share;
+        font-size: 7rem;
+        line-height: 1.14;
+    }
+
+    &--lv2 {
+        @extend %heading-share;
+        font-size: 4.2rem;
+        line-height: 1.24;
+    }
+
+    &--lv3 {
+        @extend %heading-share;
+        font-size: 2rem;
+        line-height: 1.5;
+    }
+}
+
+%desc-share {
+    color: abstracts.$text-color;
+}
+
+.desc {
+    &--lv1 {
+        @extend %desc-share;
+
+        margin-top: 20px;
+
+        font-size: 1.8rem;
+        line-height: 1.67;
+    }
+
+    &--lv2 {
+        @extend %desc-share;
+
+        margin-top: 18px;
+
+        font-size: 1.6rem;
+        line-height: 1.75;
+    }
+
+    &--lv3 {
+        @extend %desc-share;
+        font-size: 1.4rem;
+        line-height: 1.71;
+    }
+}
+
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp.line-2 {
+    --line-clamp: 2;
+}
+
+.line-clamp.line-3 {
+    --line-clamp: 3;
+}
+
+.dots {
+    display: inline-flex;
+    column-gap: 12px;
+
+    margin-left: 50%;
+
+    &:not(:hover) .dot--active::after {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.dot {
+    @include abstracts.flexCenter;
+
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+
+    background: #d8d5de;
+
+    &::after {
+        content: "";
+        display: block;
+        flex-shrink: 0;
+
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        opacity: 0;
+        visibility: hidden;
+
+        background: abstracts.$primary-color;
+
+        transition: opacity 0.5s ease, visible 0.5s ease;
+    }
+
+    &:hover::after {
+        opacity: 1;
+        visibility: visible;
+        cursor: pointer;
+    }
+}
+
+.hide-on-pc::after {
+    display: none;
+}

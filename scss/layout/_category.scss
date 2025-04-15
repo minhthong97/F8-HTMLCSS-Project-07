@@ -1,0 +1,132 @@
+/*========== Category ==========*/
+
+@use "../abstracts";
+
+.category {
+    margin-top: 80px;
+    padding: 80px 0;
+
+    &__top {
+        margin-left: auto;
+        margin-right: auto;
+
+        text-align: center;
+    }
+
+    &__desc {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: min(470px, 100%);
+    }
+
+    mark::after {
+        bottom: -13%;
+
+        width: 104%;
+        height: 44%;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 30px;
+
+        margin-top: 70px;
+    }
+
+    &-item {
+        position: relative;
+
+        &__image {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+
+            transition-property: scale;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
+        }
+
+        &__info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            padding: 16px 24px;
+            border-radius: 0 0 8px 8px;
+            backdrop-filter: blur(10px);
+
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        &__heading {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+
+            font-size: 1.8rem;
+            font-weight: 600;
+            line-height: 1.67;
+
+            &::after {
+                content: url(../../assets/icons/arrow-right.svg);
+
+                @include abstracts.flexCenter;
+
+                width: 14px;
+                height: 14px;
+                border-radius: 50%;
+
+                transition-property: scale, rotate;
+                transition-duration: 0.5s;
+                // transition-timing-function: ease;
+            }
+        }
+
+        &__desc {
+            font-size: 1.4rem;
+            line-height: 1.71;
+        }
+
+        &:hover &__img {
+            scale: 1.1;
+        }
+
+        &:hover &__heading::after {
+            scale: 1.2;
+            rotate: 180deg;
+        }
+    }
+
+    &-item:nth-child(1) {
+        grid-column: 1 / span 4;
+        grid-row: 1 / span 2;
+    }
+
+    &-item:nth-child(2) {
+        grid-column: 5 / span 5;
+    }
+
+    &-item:nth-child(3) {
+        grid-column: 10 / span 3;
+    }
+
+    &-item:nth-child(4) {
+        grid-column: 5 / span 3;
+    }
+
+    &-item:nth-child(5) {
+        grid-column: 8 / span 5;
+    }
+
+    &__btn {
+        margin: 55px auto 0;
+    }
+}

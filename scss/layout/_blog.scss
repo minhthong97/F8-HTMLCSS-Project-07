@@ -1,0 +1,74 @@
+/*========== Blog ==========*/
+
+@use "../abstracts";
+
+.blog {
+    margin-top: 88px;
+    padding: 80px;
+
+    &__row {
+        align-items: center;
+    }
+
+    &__media {
+        position: relative;
+    }
+
+    &__images {
+        display: flex;
+        align-items: center;
+    }
+
+    &__img {
+        display: block;
+
+        width: 65%;
+        border-radius: 8px;
+
+        object-fit: cover;
+
+        &--small {
+            position: relative;
+            width: 47%;
+
+            margin-right: -14%;
+        }
+    }
+
+    &__dots {
+        position: absolute;
+        bottom: 2px;
+        left: 13%;
+
+        margin: 0;
+    }
+
+    &__content {
+        padding: 48px 0;
+    }
+
+    &__quote {
+        width: 43px;
+        height: 35px;
+        object-fit: cover;
+    }
+
+    &__heading {
+        margin-top: 18px;
+    }
+
+    mark::after {
+        width: 104%;
+        height: 60%;
+    }
+
+    &__desc {
+        margin-top: 38px;
+    }
+
+    &__name {
+        margin-top: 18px;
+
+        color: #aba6b5;
+    }
+}

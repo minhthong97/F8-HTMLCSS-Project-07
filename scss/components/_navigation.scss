@@ -1,0 +1,94 @@
+/* Navbar */
+@use "../abstracts";
+
+.navbar {
+    &__list {
+        display: flex;
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+
+        padding: 10px 24px;
+
+        color: abstracts.$text-color;
+
+        transition: color 0.5s ease;
+
+        &:hover {
+            color: abstracts.$secondary-color;
+        }
+    }
+}
+
+.dropdown {
+    position: relative;
+
+    transition: color 0.5s ease;
+
+    &:hover &-menu {
+        display: block;
+    }
+
+    &:hover .navbar-item {
+        color: abstracts.$secondary-color;
+    }
+
+    &:hover &__icon {
+        rotate: 180deg;
+        color: abstracts.$secondary-color;
+    }
+
+    &__icon-wrap {
+        display: inline-block;
+
+        margin-left: 7px;
+        margin-bottom: 3px;
+    }
+
+    &__icon {
+        color: abstracts.$text-color;
+
+        transition-property: color, rotate;
+        transition-duration: 0.5s;
+        transition-timing-function: ease;
+    }
+
+    &-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 24px;
+        z-index: 1000;
+
+        min-width: 100%;
+        border-radius: 6px;
+        border: 1px solid abstracts.$secondary-color;
+
+        background: abstracts.$background-color;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+        li:first-child > * {
+            border-radius: 4px 4px 0 0;
+        }
+
+        li:last-child > * {
+            border-radius: 0 0 4px 4px;
+        }
+    }
+
+    &-item {
+        display: block;
+        padding: 10px 24px;
+
+        color: abstracts.$text-color;
+
+        transition: background-color 0.5s ease, color 0.5s ease;
+
+        &:hover {
+            background: abstracts.$secondary-color;
+            color: #fff;
+        }
+    }
+}

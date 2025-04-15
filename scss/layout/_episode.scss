@@ -1,0 +1,148 @@
+/*========== Episode ==========*/
+
+@use "../abstracts";
+
+.episode {
+    padding: 120px 0 100px;
+
+    background: abstracts.$background-color;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__heading {
+        max-width: min(390px, 100%);
+    }
+
+    .mark-before::after {
+        width: 90%;
+        height: 60%;
+    }
+
+    .mark-after::after {
+        bottom: 8%;
+
+        width: 90%;
+        height: 40%;
+    }
+    &__list {
+        margin-top: 84px;
+
+        &:not(:hover) .episode-item--active .episode-item__img {
+            scale: 1.2;
+        }
+
+        &:not(:hover) .episode-item--active .episode-item__heading {
+            color: abstracts.$secondary-color;
+        }
+
+        &:not(:hover) .episode-item--active .episode-item__link {
+            color: abstracts.$primary-color;
+        }
+
+        &:not(:hover) .episode-item--active .episode-item__link-icon-wrap {
+            background-color: abstracts.$primary-color;
+        }
+    }
+
+    &-item {
+        &__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        &:nth-child(3) &__inner,
+        &:nth-child(4) &__inner {
+            flex-direction: row-reverse;
+        }
+
+        &:hover &__img {
+            scale: 1.2;
+        }
+
+        &:hover &__heading {
+            color: abstracts.$secondary-color;
+        }
+
+        &:hover &__link {
+            color: abstracts.$primary-color;
+        }
+
+        &:hover &__link-icon-wrap {
+            background-color: abstracts.$primary-color;
+        }
+
+        &__image {
+            flex-shrink: 0;
+            width: calc(50% - 15px);
+            height: 286px;
+            border-radius: 8px;
+
+            overflow: hidden;
+        }
+
+        &__img {
+            display: block;
+
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+            transition: scale 0.5s ease;
+        }
+
+        &__info {
+            width: calc(50% - 15px);
+            padding: 30px 0;
+        }
+
+        &__label {
+            color: abstracts.$secondary-color;
+        }
+
+        &__heading {
+            min-height: 60px;
+
+            transition: color 0.5s ease;
+        }
+
+        &__link {
+            margin-top: 12px;
+            display: flex;
+            align-items: center;
+            column-gap: 6px;
+
+            color: abstracts.$heading-color;
+
+            transition: color 0.5s ease;
+
+            &-icon-wrap {
+                @include abstracts.flexCenter;
+
+                width: 14px;
+                height: 14px;
+                // padding: 4px;
+                border-radius: 50%;
+
+                background: abstracts.$heading-color;
+                color: abstracts.$background-color;
+
+                transition: background-color 0.5s ease;
+            }
+
+            &-icon {
+                width: 43%;
+                height: 43%;
+            }
+        }
+    }
+
+    &__dots {
+        margin-top: 55px;
+    }
+}

@@ -1,0 +1,45 @@
+/* Btn */
+@use "../abstracts";
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 157px;
+    height: 64px;
+    border-radius: 8px;
+
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+
+    background: abstracts.$primary-color;
+    color: #fff;
+
+    &:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+}
+
+.btn.header__btn {
+    min-width: 116px;
+    height: 48px;
+    border-radius: 6px;
+
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-align: center;
+
+    color: #fff;
+}
+
+.secondary-btn {
+    background: abstracts.$heading-color;
+
+    transition: background-color 0.5s ease;
+
+    &:hover {
+        background-color: abstracts.$primary-color;
+    }
+}

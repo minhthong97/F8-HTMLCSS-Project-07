@@ -1,0 +1,90 @@
+/*========== Footer ==========*/
+
+@use "../abstracts";
+
+.footer {
+    padding: 100px 0 38px;
+
+    background: abstracts.$background-color;
+
+    &__row {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr 1.28fr;
+        column-gap: 50px;
+    }
+
+    .logo {
+        margin-top: 4px;
+    }
+
+    &__copyright {
+        margin-top: 14px;
+    }
+
+    &__social {
+        &-group {
+            display: flex;
+            align-items: center;
+            column-gap: 14px;
+
+            margin-top: 18px;
+        }
+
+        &-link {
+            @include abstracts.flexCenter;
+
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+
+            background: abstracts.$heading-color;
+
+            transition: background-color 0.5s ease;
+
+            &:hover {
+                background-color: abstracts.$primary-color;
+            }
+        }
+
+        &-icon {
+            color: abstracts.$background-color;
+        }
+    }
+
+    &__list {
+        margin-top: 24px;
+    }
+
+    &__link {
+        display: block;
+
+        margin-top: 16px;
+
+        transition: color 0.5s ease;
+
+        &:hover {
+            text-decoration: underline;
+            color: abstracts.$primary-color;
+        }
+    }
+
+    &__app {
+        &-group {
+            display: flex;
+            column-gap: 16px;
+
+            margin-top: 24px;
+        }
+
+        &-link:hover &-icon {
+            scale: 1.1;
+        }
+
+        &-icon {
+            width: 36px;
+            height: 36px;
+
+            transition: scale 0.3s ease;
+        }
+    }
+}

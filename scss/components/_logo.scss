@@ -1,0 +1,21 @@
+/* Logo */
+@use "../abstracts";
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+
+    &__img {
+        width: 2.6em;
+        height: 2.6em;
+        margin-right: 1em;
+    }
+
+    &__text {
+        font-size: 2.4em;
+        font-weight: 600;
+
+        color: abstracts.$heading-color;
+    }
+}

@@ -1,0 +1,36 @@
+/*========== Header ==========*/
+@use "../abstracts";
+
+.header {
+    padding-top: 36px;
+
+    background: abstracts.$background-color;
+
+    &--fixed {
+        position: sticky;
+        top: -36px;
+        z-index: 99;
+    }
+
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 6px 0;
+    }
+
+    &__action {
+        display: flex;
+        align-items: center;
+        column-gap: 28px;
+    }
+
+    &__action-link {
+        color: abstracts.$heading-color;
+
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.75;
+    }
+}
