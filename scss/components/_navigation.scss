@@ -2,6 +2,16 @@
 @use "../abstracts";
 
 .navbar {
+    @include abstracts.screen(pc) {
+        .hide-on-pc {
+            display: none;
+        }
+    }
+
+    @include abstracts.screen(tablet) {
+        display: none;
+    }
+
     &__list {
         display: flex;
     }

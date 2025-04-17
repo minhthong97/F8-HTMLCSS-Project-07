@@ -90,7 +90,7 @@
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
     </head>
     <body>
-        <!-- Header -->
+        <!-- PC Header -->
         <header class="header header--fixed">
             <div class="container">
                 <div class="header__row">
@@ -106,7 +106,7 @@
 
                     <!-- Navbar -->
                     <nav class="navbar">
-                        <ul class="navbar__list">
+                        <ul class="navbar__list" id="pc-nav">
                             <li>
                                 <a href="#trending" class="navbar-item">
                                     Trending
@@ -179,6 +179,19 @@
                             <li>
                                 <a href="#blog" class="navbar-item">Blog</a>
                             </li>
+                            <li>
+                                <a
+                                    href="#!"
+                                    class="navbar-item hide-on-pc separate"
+                                >
+                                    Log in
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#!" class="navbar-item hide-on-pc">
+                                    Sign up
+                                </a>
+                            </li>
                         </ul>
                     </nav>
 
@@ -189,7 +202,80 @@
                             Sign up
                         </a>
                     </div>
+
+                    <!-- Toggle menu -->
+                    <label for="menu-checkbox" class="toggle-menu">
+                        <svg
+                            width="18"
+                            height="16"
+                            viewBox="0 0 18 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <rect width="18" height="2" fill="currentColor" />
+                            <rect
+                                y="7"
+                                width="18"
+                                height="2"
+                                fill="currentColor"
+                            />
+                            <rect
+                                y="14"
+                                width="18"
+                                height="2"
+                                fill="currentColor"
+                            />
+                        </svg>
+                    </label>
                 </div>
+            </div>
+        </header>
+
+        <!-- Tablet/Mobile Header -->
+        <header class="mobile-header">
+            <input
+                type="checkbox"
+                name=""
+                id="menu-checkbox"
+                class="menu-checkbox"
+                hidden
+            />
+            <!-- Overplay -->
+            <label for="menu-checkbox" class="menu-overplay"></label>
+
+            <!-- Menu content -->
+            <div class="menu-drawer">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <img
+                        src="./assets/img/logo.svg"
+                        alt="Logo"
+                        class="logo__img"
+                    />
+                    <span class="logo__text">babble</span>
+                </a>
+
+                <!-- Navigation -->
+                <ul id="mobile-nav" class="mobile-nav"></ul>
+                <script>
+                    const pcNav = document.querySelector("#pc-nav");
+                    const mobileNav = document.querySelector("#mobile-nav");
+
+                    mobileNav.innerHTML = pcNav.innerHTML;
+                </script>
+
+                <!-- Exit -->
+                <label for="menu-checkbox" class="exit-btn">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 384 512"
+                        fill="currentColor"
+                    >
+                        <path
+                            d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+                        />
+                    </svg>
+                </label>
             </div>
         </header>
 
@@ -324,7 +410,7 @@
                                 <a href="#!" class="btn">Get Started</a>
                                 <button class="hero__cta">
                                     Listen now
-                                    <div class="hero__cta-icon-wrap">
+                                    <span class="hero__cta-icon-wrap">
                                         <svg
                                             width="6"
                                             height="8"
@@ -338,7 +424,7 @@
                                                 fill="currentColor"
                                             />
                                         </svg>
-                                    </div>
+                                    </span>
                                 </button>
                             </div>
                         </section>
@@ -552,8 +638,8 @@
                     <div class="episode__top">
                         <h2 class="heading--lv2 episode__heading">
                             Our most
-                            <mark class="show-on-pc mark-before">popular</mark>
-                            <mark class="hide-on-pc mark-after">episodes</mark>
+                            <mark class="mark--pc">popular</mark>
+                            <mark class="mark--tablet-mobile">episodes</mark>
                         </h2>
                         <a href="#!" class="btn secondary-btn">All episodes</a>
                     </div>

@@ -80,13 +80,13 @@ mark {
 .heading {
     &--lv1 {
         @extend %heading-share;
-        font-size: 7rem;
+        @include abstracts.responsive-font(3.6rem, 7rem);
         line-height: 1.14;
     }
 
     &--lv2 {
         @extend %heading-share;
-        font-size: 4.2rem;
+        @include abstracts.responsive-font(2.6rem, 4.2rem);
         line-height: 1.24;
     }
 
@@ -107,7 +107,7 @@ mark {
 
         margin-top: 20px;
 
-        font-size: 1.8rem;
+        @include abstracts.responsive-font(1.4rem, 1.8rem);
         line-height: 1.67;
     }
 
@@ -116,7 +116,7 @@ mark {
 
         margin-top: 18px;
 
-        font-size: 1.6rem;
+        @include abstracts.responsive-font(1.4rem, 1.6rem);
         line-height: 1.75;
     }
 
@@ -184,8 +184,4 @@ mark {
         visibility: visible;
         cursor: pointer;
     }
-}
-
-.hide-on-pc::after {
-    display: none;
 }

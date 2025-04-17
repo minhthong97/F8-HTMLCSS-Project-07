@@ -9,6 +9,11 @@
 
     background: abstracts.$background-color;
 
+    @include abstracts.screen(tablet) {
+        height: auto;
+        padding: 42px 3px 32px;
+    }
+
     &__row {
         align-items: center;
     }

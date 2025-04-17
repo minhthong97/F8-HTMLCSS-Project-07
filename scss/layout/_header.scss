@@ -1,15 +1,24 @@
 /*========== Header ==========*/
 @use "../abstracts";
 
+/* PC */
 .header {
     padding-top: 36px;
 
     background: abstracts.$background-color;
 
+    @include abstracts.screen(tablet) {
+        padding-top: 12px;
+    }
+
     &--fixed {
         position: sticky;
         top: -36px;
         z-index: 99;
+
+        @include abstracts.screen(tablet) {
+            top: -12px;
+        }
     }
 
     &__row {
@@ -18,12 +27,20 @@
         justify-content: space-between;
 
         padding: 6px 0;
+
+        @include abstracts.screen(tablet) {
+            padding: 10px 3px;
+        }
     }
 
     &__action {
         display: flex;
         align-items: center;
         column-gap: 28px;
+
+        @include abstracts.screen(tablet) {
+            display: none;
+        }
     }
 
     &__action-link {
@@ -32,5 +49,105 @@
         font-size: 1.6rem;
         font-weight: 600;
         line-height: 1.75;
+    }
+}
+
+/* Table - Mobile */
+.toggle-menu {
+    width: 18px;
+    height: 16px;
+
+    color: abstracts.$text-color;
+
+    transition: color 0.5s ease;
+
+    &:hover {
+        color: abstracts.$secondary-color;
+    }
+
+    @include abstracts.screen(pc) {
+        display: none;
+    }
+
+    @include abstracts.screen(tablet) {
+        display: block;
+    }
+}
+
+@include abstracts.screen(pc) {
+    .menu-drawer {
+        display: none;
+    }
+}
+
+@include abstracts.screen(tablet) {
+    .menu-overplay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transition-property: opacity, visibility;
+        transition-duration: 0.5s;
+        transition-timing-function: ease;
+    }
+
+    .menu-checkbox:checked ~ .menu-overplay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu-drawer {
+        position: fixed;
+        inset: 0 50% 0 0;
+        background: abstracts.$background-color;
+        z-index: 101;
+        padding: 40px;
+        transform: translateX(-100%);
+        transition: 0.5s ease;
+
+        .mobile-nav {
+            margin-top: 40px;
+        }
+
+        .navbar-item {
+            padding: 12px 0;
+        }
+
+        .separate {
+            border-top: 1px solid #333;
+        }
+
+        .dropdown-menu {
+            top: 0;
+            left: 40%;
+
+            min-width: 150px;
+        }
+
+        .exit-btn {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+
+            width: 20px;
+            height: 20px;
+
+            color: #333;
+        }
+    }
+
+    .menu-checkbox:checked ~ .menu-drawer {
+        transform: translateX(0);
+    }
+}
+
+@include abstracts.screen(mobile) {
+    .menu-drawer {
+        .dropdown-menu {
+            top: 0;
+            left: 60%;
+        }
     }
 }
