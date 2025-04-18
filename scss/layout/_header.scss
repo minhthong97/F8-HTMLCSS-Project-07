@@ -44,15 +44,22 @@
     }
 
     &__action-link {
-        color: abstracts.$heading-color;
-
         font-size: 1.6rem;
         font-weight: 600;
         line-height: 1.75;
+
+        color: abstracts.$heading-color;
+
+        transition: color 0.5s ease;
+
+        &:hover {
+            text-decoration: underline;
+            color: abstracts.$secondary-color;
+        }
     }
 }
 
-/* Table - Mobile */
+/* Tablet - Mobile */
 .toggle-menu {
     width: 18px;
     height: 16px;
@@ -111,12 +118,20 @@
             padding: 20px;
         }
 
+        .menu-cta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
         .mobile-nav {
             margin-top: 40px;
         }
 
         .navbar-item {
-            padding: 12px 0;
+            display: inline-block;
+
+            padding: 12px 12px 12px 0;
         }
 
         .separate {
@@ -131,10 +146,6 @@
         }
 
         .exit-btn {
-            position: absolute;
-            top: 5%;
-            right: 5%;
-
             width: 20px;
             height: 20px;
 

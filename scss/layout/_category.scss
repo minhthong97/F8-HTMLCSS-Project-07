@@ -113,9 +113,9 @@
                 height: 0.78em;
                 border-radius: 50%;
 
-                transition-property: scale, rotate;
+                transition-property: transform;
                 transition-duration: 0.5s;
-                // transition-timing-function: ease;
+                transition-timing-function: ease;
             }
         }
 
@@ -129,8 +129,7 @@
         }
 
         &:hover &__heading::after {
-            scale: 1.2;
-            rotate: 180deg;
+            transform: translateX(100%);
         }
     }
 
