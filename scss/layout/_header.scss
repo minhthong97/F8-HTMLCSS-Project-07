@@ -107,6 +107,10 @@
         transform: translateX(-100%);
         transition: 0.5s ease;
 
+        @include abstracts.screen(mobile-small) {
+            padding: 20px;
+        }
+
         .mobile-nav {
             margin-top: 40px;
         }
@@ -135,6 +139,11 @@
             height: 20px;
 
             color: #333;
+
+            @include abstracts.screen(mobile-small) {
+                top: 3%;
+                right: 4%;
+            }
         }
     }
 

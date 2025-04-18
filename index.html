@@ -283,7 +283,7 @@
         <section class="hero">
             <div class="container">
                 <div class="row g-0 hero__row">
-                    <div class="col-lg-6 col-sm-12">
+                    <div class="col-lg-6 col-12">
                         <div class="hero__media">
                             <div class="hero-col">
                                 <figure class="hero__image">
@@ -352,21 +352,6 @@
                                 </div>
                             </div>
                             <div class="hero-col">
-                                <figure class="hero__image">
-                                    <img
-                                        src="./assets/img/hero-02.webp"
-                                        alt="Sarah Taylor"
-                                        class="hero__img"
-                                    />
-                                    <figcaption class="hero__image-info">
-                                        <span class="hero__image-name">
-                                            YOASOBI
-                                        </span>
-                                        <span class="hero__image-title">
-                                            Song podcaster
-                                        </span>
-                                    </figcaption>
-                                </figure>
                                 <div class="hero__stat">
                                     <span class="hero__stat-text--top">
                                         500+
@@ -392,11 +377,26 @@
                                         class="hero__app"
                                     />
                                 </div>
+                                <figure class="hero__image">
+                                    <img
+                                        src="./assets/img/hero-02.webp"
+                                        alt="Sarah Taylor"
+                                        class="hero__img"
+                                    />
+                                    <figcaption class="hero__image-info">
+                                        <span class="hero__image-name">
+                                            YOASOBI
+                                        </span>
+                                        <span class="hero__image-title">
+                                            Song podcaster
+                                        </span>
+                                    </figcaption>
+                                </figure>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-5 col-sm-12 offset-lg-1">
+                    <div class="col-lg-5 col-12 offset-lg-1 offset-0">
                         <section class="hero__info">
                             <h1 class="heading--lv1 hero__heading">
                                 A new era of <mark>podcasting</mark> for you
@@ -471,7 +471,7 @@
                                 </a>
                             </section>
                         </div>
-                        <div class="col-md-6 col-12 offset-1">
+                        <div class="col-md-6 col-12 offset-md-1 offset-0">
                             <figure class="trending__media">
                                 <img
                                     src="./assets/icons/apple-podcast.svg"
@@ -507,7 +507,7 @@
             <!-- Category -->
             <section class="category" id="category">
                 <div class="container g-0">
-                    <div class="row">
+                    <div class="row category__row">
                         <div class="category__top">
                             <h2 class="heading--lv2">
                                 Listen by <mark>category</mark>
@@ -634,14 +634,16 @@
 
             <!-- Episode -->
             <section class="episode" id="episode">
-                <div class="container">
+                <div class="container episode__container g-0">
                     <div class="episode__top">
                         <h2 class="heading--lv2 episode__heading">
                             Our most
                             <mark class="mark--pc">popular</mark>
                             <mark class="mark--tablet-mobile">episodes</mark>
                         </h2>
-                        <a href="#!" class="btn secondary-btn">All episodes</a>
+                        <a href="#!" class="btn secondary-btn episode__btn">
+                            All episodes
+                        </a>
                     </div>
 
                     <div class="row g-3 episode__list">
@@ -879,7 +881,7 @@
             <section class="blog" id="blog">
                 <div class="container">
                     <div class="row blog__row">
-                        <div class="col-lg-6 col-sm-12 g-2">
+                        <div class="col-md-6 col-12 gx-3">
                             <div class="blog__media">
                                 <figure class="blog__images">
                                     <img
@@ -901,7 +903,7 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-5 offset-lg-1 col-sm-12 offset-0">
+                        <div class="col-md-5 offset-md-1 col-12 offset-0">
                             <section class="blog__content">
                                 <img
                                     src="./assets/img/blog-quote.svg"
@@ -932,7 +934,7 @@
             <section class="subscribe">
                 <div class="container g-0">
                     <div class="subscribe__inner">
-                        <div class="row g-3 subscribe__top">
+                        <div class="row g-md-3 g-0 subscribe__top">
                             <div class="col-lg-5 offset-lg-1 col-12 offset-0">
                                 <h2 class="heading--lv2 subscribe__heading">
                                     Subscribe and get
@@ -956,7 +958,7 @@
                             class="subscribe__form"
                             autocomplete="off"
                         >
-                            <div class="row g-3 subscribe__body">
+                            <div class="row g-md-3 g-0 subscribe__body">
                                 <div
                                     class="col-lg-4 offset-lg-1 col-12 offset-0"
                                 >

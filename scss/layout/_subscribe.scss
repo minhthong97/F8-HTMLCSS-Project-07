@@ -5,6 +5,10 @@
 .subscribe {
     margin-top: 80px;
 
+    @include abstracts.screen(tablet) {
+        margin-top: 0;
+    }
+
     &__inner {
         position: relative;
 
@@ -24,6 +28,10 @@
 
     &__desc {
         color: #aba6b5;
+
+        @include abstracts.screen(tablet) {
+            margin-top: 12px;
+        }
     }
 
     mark::after {
@@ -33,6 +41,10 @@
 
     &__form {
         margin-top: 70px;
+
+        @include abstracts.screen(tablet) {
+            margin-top: 38px;
+        }
     }
 
     &__body {
@@ -52,6 +64,16 @@
             line-height: 1.75;
 
             color: #aba6b5;
+        }
+
+        @include abstracts.screen(tablet) {
+            margin-top: 12px;
+        }
+    }
+
+    &__btn {
+        @include abstracts.screen(tablet) {
+            margin-top: 12px;
         }
     }
 

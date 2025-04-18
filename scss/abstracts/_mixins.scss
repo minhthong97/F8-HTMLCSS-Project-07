@@ -20,6 +20,11 @@
             @content;
         }
     }
+    @if $device == mobile-small {
+        @media (max-width: 575.98px) {
+            @content;
+        }
+    }
 }
 
 @mixin responsive-font(

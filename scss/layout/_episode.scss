@@ -7,6 +7,20 @@
 
     background: abstracts.$background-color;
 
+    &__container {
+        position: relative;
+    }
+
+    @include abstracts.screen(mobile) {
+        padding: 70px 18px 172px;
+
+        &__btn {
+            position: absolute;
+            bottom: -102px;
+            left: 0;
+        }
+    }
+
     &__top {
         display: flex;
         align-items: center;
@@ -28,7 +42,7 @@
 
     .mark--tablet-mobile::after {
         bottom: 0;
-
+        left: 0;
         width: 100%;
         height: 41%;
 
@@ -56,6 +70,17 @@
         &:not(:hover) .episode-item--active .episode-item__link-icon-wrap {
             background-color: abstracts.$primary-color;
         }
+
+        @include abstracts.screen(tablet) {
+            flex-wrap: nowrap;
+            overflow: hidden;
+
+            margin-top: 38px;
+
+            &:not(:hover) .episode-item--active .episode-item__img {
+                scale: 1;
+            }
+        }
     }
 
     &-item {
@@ -64,6 +89,10 @@
             align-items: center;
             justify-content: space-between;
             gap: 30px;
+
+            @include abstracts.screen(tablet) {
+                gap: 20px;
+            }
         }
 
         &:nth-child(3) &__inner,
@@ -90,17 +119,20 @@
         &__image {
             flex-shrink: 0;
             width: calc(50% - 15px);
-            height: 286px;
             border-radius: 8px;
 
             overflow: hidden;
+
+            @include abstracts.screen(tablet) {
+                width: calc(50% - 10px);
+            }
         }
 
         &__img {
             display: block;
-
+            aspect-ratio: 270 / 286;
             width: 100%;
-            height: 100%;
+
             object-fit: cover;
 
             transition: scale 0.5s ease;
@@ -119,6 +151,16 @@
             min-height: 60px;
 
             transition: color 0.5s ease;
+
+            @include abstracts.screen(tablet) {
+                min-height: 36px;
+            }
+        }
+
+        &__desc {
+            @include abstracts.screen(tablet) {
+                margin-top: 12px;
+            }
         }
 
         &__link {
@@ -130,6 +172,10 @@
             color: abstracts.$heading-color;
 
             transition: color 0.5s ease;
+
+            @include abstracts.screen(tablet) {
+                margin-top: 6px;
+            }
 
             &-icon-wrap {
                 @include abstracts.flexCenter;
@@ -154,5 +200,11 @@
 
     &__dots {
         margin-top: 55px;
+
+        transform: translateX(-50%);
+
+        @include abstracts.screen(tablet) {
+            margin-top: 18px;
+        }
     }
 }

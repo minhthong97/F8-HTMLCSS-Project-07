@@ -109,6 +109,10 @@ mark {
 
         @include abstracts.responsive-font(1.4rem, 1.8rem);
         line-height: 1.67;
+
+        @include abstracts.screen(tablet) {
+            margin-top: 12px;
+        }
     }
 
     &--lv2 {
@@ -122,7 +126,7 @@ mark {
 
     &--lv3 {
         @extend %desc-share;
-        font-size: 1.4rem;
+        @include abstracts.responsive-font(1rem, 1.4rem);
         line-height: 1.71;
     }
 }

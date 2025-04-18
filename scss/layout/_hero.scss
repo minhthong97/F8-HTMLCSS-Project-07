@@ -29,13 +29,21 @@
         position: relative;
 
         width: calc((100% - 30px) / 2);
-    }
 
-    &-col:nth-child(2) {
-        padding-top: 160px;
+        @include abstracts.responsive-font(0.591rem, 1rem);
+
+        &:nth-child(2) .hero__image {
+            margin-top: 2.8em;
+        }
+
+        @include abstracts.screen(mobile) {
+            width: calc((100% - 18px) / 2);
+        }
     }
 
     &__image {
+        position: relative;
+
         border-radius: 8px;
         overflow: hidden;
     }
@@ -52,7 +60,7 @@
         transform: translateX(-50%);
 
         width: 72%;
-        padding: 14px 0;
+        height: 20%;
         border-radius: 9px;
         background: rgba(255, 255, 255, 0.4);
         box-shadow: 0px 12px 44px 0px rgba(0, 0, 0, 0.07);
@@ -66,19 +74,23 @@
     }
 
     &__image-name {
+        @include abstracts.responsive-font(0.83rem, 1.4rem, 576px, 768px);
+
         color: abstracts.$heading-color;
-        font-size: 1.4rem;
+
         font-weight: 600;
     }
 
     &__image-title {
+        @include abstracts.responsive-font(0.71rem, 1.2rem, 576px, 992px);
+
         color: abstracts.$text-color;
-        font-size: 1.2rem;
     }
 
     &__img {
-        height: 302px;
+        aspect-ratio: 270 / 302;
         width: 100%;
+        height: auto;
         object-fit: cover;
     }
 
@@ -86,10 +98,11 @@
         @include abstracts.flexCenter;
         column-gap: 12px;
 
-        position: absolute;
-        bottom: 28%;
-        left: 50%;
-        transform: translateX(-50%);
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -12%;
+        z-index: 5;
 
         width: 72%;
         padding: 17px 0;
@@ -120,14 +133,15 @@
     }
 
     &__client {
-        position: absolute;
-        bottom: 5%;
-        left: 0;
+        // position: absolute;
+        margin-top: 2.3em;
+
+        @include abstracts.responsive-font(0.591rem, 1rem);
     }
 
     &__client-text {
         color: abstracts.$heading-color;
-        font-size: 1.4rem;
+        font-size: 1.4em;
         font-weight: 600;
         line-height: 1.71;
     }
@@ -141,13 +155,13 @@
     &__client-avatar {
         @include abstracts.flexCenter;
 
-        width: 48px;
-        height: 48px;
+        width: 4.8em;
+        height: 4.8em;
         border-radius: 50%;
-        border: 2px solid #fff;
+        border: 0.2em solid #fff;
         object-fit: cover;
 
-        font-size: 1.2rem;
+        font-size: 1.2em;
         font-weight: 600;
         line-height: 1.83;
 
@@ -156,21 +170,23 @@
     }
 
     &__client-avatar + &__client-avatar {
-        margin-left: -18px;
+        margin-left: -1.8em;
     }
 
     &__stat {
         @include abstracts.flexCenter;
         flex-direction: column;
-        row-gap: 4px;
+        row-gap: 0.4em;
 
-        position: absolute;
-        top: 1.7%;
-        right: 26%;
+        position: relative;
+        margin-top: 0.8em;
+        margin-left: 11.8em;
 
-        width: 82px;
-        height: 82px;
+        width: 8.2em;
+        height: 8.2em;
         border-radius: 50%;
+
+        @include abstracts.responsive-font(0.591rem, 1rem);
 
         background: abstracts.$secondary-color;
 
@@ -200,14 +216,14 @@
 
     &__stat-text--top {
         color: #fff;
-        font-size: 1.4rem;
+        font-size: 1.4em;
         font-weight: 800;
         line-height: 1;
     }
 
     &__stat-text--bottom {
         color: #ffefe7;
-        font-size: 1rem;
+        font-size: 1em;
         font-weight: 500;
         line-height: 1;
     }
@@ -215,16 +231,22 @@
     &__app-group {
         display: flex;
         align-items: center;
-        column-gap: 18px;
+        column-gap: 1.8em;
 
-        position: absolute;
-        top: 22%;
-        left: 0;
+        margin-top: 1.2em;
+
+        @include abstracts.responsive-font(0.591rem, 1rem);
     }
 
     &__app {
-        width: 28px;
-        height: 28px;
+        width: 2.8em;
+        height: 2.8em;
+    }
+
+    &__info {
+        @include abstracts.screen(tablet) {
+            margin-top: 40px;
+        }
     }
 
     &__cta-group {
@@ -233,6 +255,10 @@
         column-gap: 28px;
 
         margin-top: 40px;
+
+        @include abstracts.screen(tablet) {
+            margin-top: 28px;
+        }
     }
 
     &__cta {

@@ -4,19 +4,33 @@
 
 .blog {
     margin-top: 88px;
-    padding: 80px;
+    padding: 80px 0;
+
+    @include abstracts.screen(tablet) {
+        margin-top: 0;
+        padding: 100px 3px;
+    }
 
     &__row {
         align-items: center;
+
+        @include abstracts.screen(mobile) {
+            flex-direction: column-reverse;
+        }
     }
 
     &__media {
         position: relative;
+
+        @include abstracts.screen(tablet) {
+            margin-top: 28px;
+        }
     }
 
     &__images {
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
 
     &__img {
@@ -45,6 +59,10 @@
 
     &__content {
         padding: 48px 0;
+
+        @include abstracts.screen(tablet) {
+            padding: 0;
+        }
     }
 
     &__quote {
